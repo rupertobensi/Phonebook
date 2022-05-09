@@ -1,3 +1,6 @@
 ks/
+bin/
+obj/
+pb_*
 ks-*
 *.exe
