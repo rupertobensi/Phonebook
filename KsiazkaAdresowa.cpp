@@ -1,11 +1,18 @@
 #include "KsiazkaAdresowa.h"
 
-void KsiazkaAdresowa::rejestracjaUzytkownika() {
-  uzytkownikMenedzer.rejestracjaUzytkownika();
+KsiazkaAdresowa::KsiazkaAdresowa()
+{
+    uzytkownikMenedzer.wczytajUzytkownikowZPliku();
 }
 
-void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
-  uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
+void KsiazkaAdresowa::rejestracjaUzytkownika()
+{
+    uzytkownikMenedzer.rejestracjaUzytkownika();
+}
+
+void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
+{
+    uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
 
 

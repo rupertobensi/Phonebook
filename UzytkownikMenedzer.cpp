@@ -1,6 +1,7 @@
 #include "UzytkownikMenedzer.h"
 
-void UzytkownikMenedzer::rejestracjaUzytkownika() {
+void UzytkownikMenedzer::rejestracjaUzytkownika()
+{
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
@@ -10,7 +11,8 @@ void UzytkownikMenedzer::rejestracjaUzytkownika() {
     system("pause");
 }
 
-Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
+Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
+{
     Uzytkownik uzytkownik;
 
     uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
@@ -21,7 +23,8 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
         cout << "Podaj login: ";
         cin >> login;
         uzytkownik.ustawLogin(login);
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    }
+    while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     string haslo;
     cout << "Podaj haslo: ";
@@ -41,22 +44,29 @@ int UzytkownikMenedzer::pobierzIdNowegoUzytkownika()
 
 bool UzytkownikMenedzer::czyIstniejeLogin(string login)
 {
-  for (int i = 0; i <uzytkownicy.size(); i++) {
-    if (uzytkownicy[i].pobierzLogin() == login) {
-      cout << endl << "Istnieje uzytkownik o takim loginie." << endl;
-      return true;
+    for (int i = 0; i <uzytkownicy.size(); i++)
+    {
+        if (uzytkownicy[i].pobierzLogin() == login)
+        {
+            cout << endl << "Istnieje uzytkownik o takim loginie." << endl;
+            return true;
+        }
     }
-  }
-  return false;
+    return false;
 }
 
-void UzytkownikMenedzer::wypiszWszystkichUzytkownikow() {
+void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
+{
 
-  for (int i = 0; i <uzytkownicy.size(); i++) {
-      cout << uzytkownicy[i].pobierzId() << endl;
-      cout << uzytkownicy[i].pobierzLogin() << endl;
-      cout << uzytkownicy[i].pobierzHaslo() << endl;
+    for (int i = 0; i <uzytkownicy.size(); i++)
+    {
+        cout << uzytkownicy[i].pobierzId() << endl;
+        cout << uzytkownicy[i].pobierzLogin() << endl;
+        cout << uzytkownicy[i].pobierzHaslo() << endl;
     }
 }
 
-
+void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
+{
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}

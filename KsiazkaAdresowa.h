@@ -5,16 +5,15 @@
 
 #include "UzytkownikMenedzer.h"
 
-
 using namespace std;
 
-class KsiazkaAdresowa {
-
-  UzytkownikMenedzer uzytkownikMenedzer;
+class KsiazkaAdresowa
+{
+    UzytkownikMenedzer uzytkownikMenedzer;
 public:
-  void rejestracjaUzytkownika();
-  void wypiszWszystkichUzytkownikow();
-
+    KsiazkaAdresowa();
+    void rejestracjaUzytkownika();
+    void wypiszWszystkichUzytkownikow();
 };
 
 #endif

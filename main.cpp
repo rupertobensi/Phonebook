@@ -4,11 +4,14 @@
 
 using namespace std;
 
-int main () {
-  KsiazkaAdresowa ksiazkaAdresowa;
-  ksiazkaAdresowa.rejestracjaUzytkownika();
-  ksiazkaAdresowa.rejestracjaUzytkownika();
-  ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+int main ()
+{
+    KsiazkaAdresowa ksiazkaAdresowa;
 
-  return 0;
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+
+    return 0;
 }
