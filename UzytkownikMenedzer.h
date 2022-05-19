@@ -30,6 +30,8 @@ public:
     char wybierzOpcjeZMenuGlownego();
 
     int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
 
 };
 
