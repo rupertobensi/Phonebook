@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>70</y>
+      <w>320</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>KsiazkaAdresowa
+--
+- UzytkownikMenedzer : uzytkownikMenedzer
+-
++ rejestracjaUzytkownika() : void
++ wypiszWszystkichUzytkownikow() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>70</y>
+      <w>300</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+--
+-id : Integer
+-login : String 
+-haslo : String
+--
++ustawId() : void
++ustawLogin() : void
++ustawHaslo() : void
++pobierzId() : Integer
++pobierzLogin() : String
++pobierzHaslo() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>70</y>
+      <w>400</w>
+      <h>530</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenedzer
+--
+- idZalogowanegoUzytkownika : Integer
+- uzytkownicy: vector &lt;Uzytkownicy&gt;
+--
++ rejestracjaUzytkownika() : void
++ logowanieUzytkownika() : Integer
++  wypiszWszystkichUzytkownikow() : void
+- podajDaneNowegoUzytkownika() : Uzytkownik
+- pobierzIdNowegoUzytkownika() : Integer
+- czyIstniejeLogin() : Bool
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>490</y>
+      <w>300</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+--
+- nazwaPlikuZUzytkownikami : String
+- fstream : plikTekstowy
+--
++ PlikZUzytkownikami()
++ dopiszUzytkownikaDoPliku() : void
+- czyPlikJestPusty() : Bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1220</x>
+      <y>70</y>
+      <w>300</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
++ konwersjaIntNaString() : String
++ wczytajLinie() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

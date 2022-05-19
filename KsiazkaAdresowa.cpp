@@ -10,4 +10,13 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
 
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
+{
+    uzytkownikMenedzer.wybierzOpcjeZMenuGlownego();
+}
+
+int KsiazkaAdresowa::logowanieUzytkownika()
+{
+  uzytkownikMenedzer.logowanieUzytkownika();
+}
 
