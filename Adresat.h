@@ -3,14 +3,11 @@
 
 #include <iostream>
 
-#include "UzytkownikMenedzer.h"
-
 
 using namespace std;
 
 class Adresat
 {
-    UzytkownikMenedzer uzytkownikMenedzer;
     int id;
     int idUzytkownika;
     string imie;

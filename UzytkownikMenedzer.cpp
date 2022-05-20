@@ -1,5 +1,7 @@
 #include "UzytkownikMenedzer.h"
 
+int UzytkownikMenedzer::idZalogowanegoUzytkownika;
+
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -88,6 +90,30 @@ char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego()
     return wybor;
 }
 
+char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika()
+{
+    char wybor;
+
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+//    cout << "2. Wyszukaj po imieniu" << endl;
+//    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+//    cout << "5. Usun adresata" << endl;
+//    cout << "6. Edytuj adresata" << endl;
+//    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+//    cout << "8. Wyloguj sie" << endl;
+//    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}
+
+
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -144,4 +170,8 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
 
