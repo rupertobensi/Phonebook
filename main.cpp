@@ -8,13 +8,13 @@ using namespace std;
 int main ()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
-
+    char wybor;
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    //system("pause");
-    //    ksiazkaAdresowa.rejestracjaUzytkownika();
-    //    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+//    //system("pause");
+//    //    ksiazkaAdresowa.rejestracjaUzytkownika();
+//    //    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+//    ksiazkaAdresowa.logowanieUzytkownika();
+//    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
 
 
     return 0;
