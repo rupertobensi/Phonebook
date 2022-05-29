@@ -21,10 +21,11 @@ class PlikZAdresatami
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int idOstatniegoAdresata;
+    //int idOstatniegoAdresataZwczytanegoPliku;
 
 public:
     void dopiszAdresataDoPliku(Adresat adresat);
-    int idOstatniegoAdresataZwczytanegoPliku;
+
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI)
     {
         idOstatniegoAdresata = 0;

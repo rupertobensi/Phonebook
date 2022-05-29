@@ -15,7 +15,7 @@ using namespace std;
 class UzytkownikMenedzer
 {
     vector <Uzytkownik> uzytkownicy;
-    static int idZalogowanegoUzytkownika;
+    int idZalogowanegoUzytkownika;
 
     Uzytkownik podajDaneNowegoUzytkownika();
 
@@ -35,7 +35,6 @@ public:
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
-    static int pobierzIdZalogowanegoUzytkownika();
 
 };
 

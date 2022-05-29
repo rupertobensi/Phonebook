@@ -11,12 +11,9 @@ int main ()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
 
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    system("pause");
+
     while (true)
     {
-        idAktualnegoUzytkownika == UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika();
-        system("pause");
         if (idAktualnegoUzytkownika == 0)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
@@ -27,7 +24,8 @@ int main ()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idAktualnegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
+                ksiazkaAdresowa.logowanieUzytkownika();
+                idAktualnegoUzytkownika = ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -41,21 +39,26 @@ int main ()
 
         else
         {
+
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
             switch (wybor)
             {
             case '1':
-                ksiazkaAdresowa.dodajAdresata();
+                ksiazkaAdresowa.dodajAdresata(idAktualnegoUzytkownika);
                 break;
             case '4':
-
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow(idAktualnegoUzytkownika);
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
+            case '8':
+                idAktualnegoUzytkownika = 0;
+                //adresaci.clear();
+                break;
             default:
                 cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
-                system("pause");
+                //system("pause");
                 break;
             }
         }

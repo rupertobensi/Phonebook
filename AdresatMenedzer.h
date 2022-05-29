@@ -9,7 +9,7 @@
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
-#include "UzytkownikMenedzer.h" // do metody statycznej
+#include "UzytkownikMenedzer.h"
 
 
 using namespace std;
@@ -23,11 +23,13 @@ class AdresatMenedzer
     PlikZAdresatami plikZAdresatami;
     //Adresat adresat;
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlDaneAdresata(Adresat adresat);
 
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
-    int dodajAdresata();
+    int dodajAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika);
 
 
 

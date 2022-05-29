@@ -26,7 +26,6 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     }
     idOstatniegoAdresata++;
     plikTekstowy.close();
-    system("pause");
 }
 
 
@@ -78,7 +77,6 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
                 adresaci.push_back(adresat);
             }
             idOstatniegoAdresata++;
-            cout << idOstatniegoAdresata << endl;
         }
         daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
     }
