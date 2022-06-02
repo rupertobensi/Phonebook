@@ -6,9 +6,7 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
 
     uzytkownicy.push_back(uzytkownik);
     plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
-
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
-    system("pause");
 }
 
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
@@ -88,6 +86,30 @@ char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego()
     return wybor;
 }
 
+char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika()
+{
+    char wybor;
+
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+//    cout << "2. Wyszukaj po imieniu" << endl;
+//    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+//    cout << "5. Usun adresata" << endl;
+//    cout << "6. Edytuj adresata" << endl;
+//    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
+//    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}
+
+
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -109,8 +131,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    system("pause");
-
+                    //uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+                    //wczytajUzytkownikowZPliku();
                     return idZalogowanegoUzytkownika=uzytkownicy[i].pobierzId();
                 }
             }
@@ -138,10 +160,8 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
         {
             uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
-            system("pause");
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+    system("pause");
 }
-
-

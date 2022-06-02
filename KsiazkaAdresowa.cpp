@@ -15,12 +15,33 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
     uzytkownikMenedzer.wybierzOpcjeZMenuGlownego();
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika()
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
-  uzytkownikMenedzer.logowanieUzytkownika();
+    uzytkownikMenedzer.wybierzOpcjeZMenuUzytkownika();
+}
+
+void KsiazkaAdresowa::logowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
+    //uzytkownikMenedzer.wczytajUzytkownikowZPliku();
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
-  uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+}
+
+void KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika)
+{
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow(idZalogowanegoUzytkownika);
+}
+
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
 }
