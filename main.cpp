@@ -7,14 +7,12 @@ using namespace std;
 
 int main ()
 {
-    int idAktualnegoUzytkownika = 0;
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
 
-
     while (true)
     {
-        if (idAktualnegoUzytkownika == 0)
+        if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
@@ -25,7 +23,6 @@ int main ()
                 break;
             case '2':
                 ksiazkaAdresowa.logowanieUzytkownika();
-                idAktualnegoUzytkownika = ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -44,26 +41,57 @@ int main ()
             switch (wybor)
             {
             case '1':
-                ksiazkaAdresowa.dodajAdresata(idAktualnegoUzytkownika);
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '4':
-                ksiazkaAdresowa.wyswietlWszystkichAdresatow(idAktualnegoUzytkownika);
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
-                idAktualnegoUzytkownika = 0;
-                //adresaci.clear();
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
             default:
                 cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
-                //system("pause");
+                system("pause");
                 break;
             }
         }
     }
 
 
+
+
+
     return 0;
+}
+
+
+//TESTY AdresatMenedzer
+#include "AdresatMenedzer.h"
+int Qmain()
+{
+  AdresatMenedzer adresatMenedzer("Adresaci.txt", 2);
+  adresatMenedzer.wyswietlWszystkichAdresatow();
+  adresatMenedzer.dodajAdresata();
+  adresatMenedzer.wyswietlWszystkichAdresatow();
+
+}
+
+
+//TESTY PlikZAdresatami
+#include "Adresat.h"
+#include "PlikZAdresatami.h"
+
+int Wmain()
+{
+    PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
+    Adresat adresat(1,9,"Janek","Kowalski","999 888 888","janek@o2.pl","ul. Niska 54");
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+
+    cout << plikZAdresatami.pobierzIdOstatniegoAdresata();
+
+
+
 }

@@ -1,22 +1,37 @@
 #include "AdresatMenedzer.h"
 
+//int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
+//{
+//    Adresat adresat;
+//    system("cls");
+//    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+//    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
+//
+//    adresaci.push_back(adresat);
+//    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+//
+//    system("pause");
+//    return ++idOstatniegoAdresata;
+//}
 
-
-int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
+void AdresatMenedzer::dodajAdresata()
 {
     Adresat adresat;
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
+    if (plikZAdresatami.dopiszAdresataDoPliku(adresat))
+      cout << "Nowy adresat zostal dodany" << endl;
+    else
+      cout <<"Blad. Nie udalo sie dodac nowego adresata do pliku." << endl;
     system("pause");
-    return ++idOstatniegoAdresata;
+
 }
 
-Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
+
+Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
 
@@ -24,7 +39,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 
     //adresat.ustawId(adresaci.size() + 1);
     adresat.ustawId((plikZAdresatami.pobierzIdOstatniegoAdresata() + 1));
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
     adresat.pobierzImie() = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie());
@@ -45,9 +60,10 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     return adresat;
 }
 
-void AdresatMenedzer::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
+//void AdresatMenedzer::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
+void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     system("cls");
     if (!adresaci.empty())
     {
@@ -65,6 +81,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
     else
     {
         cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+        system("pause");
     }
 }
 
