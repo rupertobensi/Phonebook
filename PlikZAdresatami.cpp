@@ -1,7 +1,7 @@
 #include "PlikZAdresatami.h"
 
 
-void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
+bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
     fstream plikTekstowy;
@@ -19,13 +19,11 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         {
             plikTekstowy  << liniaZDanymiAdresata << endl;
         }
+        idOstatniegoAdresata++;
+        plikTekstowy.close();
+        return true;
     }
-    else
-    {
-        cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
-    }
-    idOstatniegoAdresata++;
-    plikTekstowy.close();
+    return true;
 }
 
 
@@ -55,6 +53,7 @@ bool PlikZAdresatami::czyPlikJestPusty()
         return false;
 }
 
+
 vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
@@ -66,6 +65,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
     idOstatniegoAdresata = 0;
+    //idZalogowanegoUzytkownika  = 1;
 
     if (plikTekstowy.good() == true)
     {
