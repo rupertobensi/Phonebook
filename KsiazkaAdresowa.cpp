@@ -23,7 +23,6 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 void KsiazkaAdresowa::logowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
-    //uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
         {
             adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
@@ -55,15 +54,23 @@ void KsiazkaAdresowa::dodajAdresata()
     }
 }
 
-
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
     adresatMenedzer->wyswietlWszystkichAdresatow();
 }
 
-
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     return uzytkownikMenedzer.czyUzytkownikJestZalogowany();
-
 }
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuEdycja()
+{
+    uzytkownikMenedzer.wybierzOpcjeZMenuEdycja();
+}
+
+void KsiazkaAdresowa::usunAdresata()
+{
+  adresatMenedzer->usunAdresata();
+}
+

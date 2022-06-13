@@ -46,6 +46,12 @@ int main ()
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
+            case '5':
+                ksiazkaAdresowa.usunAdresata();
+                break;
+            case '6':
+                ksiazkaAdresowa.wybierzOpcjeZMenuEdycja();
+                break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
@@ -59,9 +65,6 @@ int main ()
             }
         }
     }
-
-
-
 
 
     return 0;
@@ -84,14 +87,12 @@ int Qmain()
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 
-int Wmain()
+int Fmain()
 {
     PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
     Adresat adresat(1,9,"Janek","Kowalski","999 888 888","janek@o2.pl","ul. Niska 54");
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     cout << plikZAdresatami.pobierzIdOstatniegoAdresata();
-
-
 
 }
