@@ -21,7 +21,6 @@ class AdresatMenedzer
     int idZalogowanegoUzytkownika;
     int idOstatniegoAdresata;
     PlikZAdresatami plikZAdresatami;
-    //Adresat adresat;
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
 
@@ -33,7 +32,8 @@ public:
     };
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-
+    void usunAdresata();
+    int podajIdWybranegoAdresata();
 
 
 
