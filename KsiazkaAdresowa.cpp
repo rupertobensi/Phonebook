@@ -64,9 +64,9 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
     return uzytkownikMenedzer.czyUzytkownikJestZalogowany();
 }
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuEdycja()
+char KsiazkaAdresowa::edytujAdresata()
 {
-    uzytkownikMenedzer.wybierzOpcjeZMenuEdycja();
+    adresatMenedzer->edytujAdresata();
 }
 
 void KsiazkaAdresowa::usunAdresata()

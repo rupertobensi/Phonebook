@@ -41,7 +41,7 @@ public:
     bool czyUzytkownikJestZalogowany();
     void wylogowanieUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
-    char wybierzOpcjeZMenuEdycja();
+
 };
 
 #endif

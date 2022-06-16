@@ -30,11 +30,13 @@ public:
     {
       adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
+    void edytujAdresata();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     void usunAdresata();
     int podajIdWybranegoAdresata();
-
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
 
 
 
