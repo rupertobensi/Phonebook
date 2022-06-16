@@ -36,7 +36,7 @@ public:
     void wyswietlWszystkichAdresatow();
     void wylogowanieUzytkownika();
     bool czyUzytkownikJestZalogowany();
-    char wybierzOpcjeZMenuEdycja();
+    char edytujAdresata();
     void usunAdresata();
 };
 

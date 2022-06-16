@@ -37,6 +37,11 @@ public:
     int pobierzIdOstatniegoAdresata ();
     void usunWybranegoAdresataZPliku(int idUsuwanegoAdresata);
 
+    //int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
+
+
+    void edytujWybranegoAdresataZPliku(Adresat adresat);
+
 
 
 };
