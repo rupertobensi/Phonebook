@@ -36,7 +36,6 @@ int main ()
 
         else
         {
-
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
             switch (wybor)
             {
@@ -74,31 +73,4 @@ int main ()
 
 
     return 0;
-}
-
-
-//TESTY AdresatMenedzer
-#include "AdresatMenedzer.h"
-int Qmain()
-{
-    AdresatMenedzer adresatMenedzer("Adresaci.txt", 2);
-    adresatMenedzer.wyswietlWszystkichAdresatow();
-    adresatMenedzer.dodajAdresata();
-    adresatMenedzer.wyswietlWszystkichAdresatow();
-
-}
-
-
-//TESTY PlikZAdresatami
-#include "Adresat.h"
-#include "PlikZAdresatami.h"
-
-int Fmain()
-{
-    PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
-    Adresat adresat(1,9,"Janek","Kowalski","999 888 888","janek@o2.pl","ul. Niska 54");
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    cout << plikZAdresatami.pobierzIdOstatniegoAdresata();
-
 }

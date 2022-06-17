@@ -7,6 +7,7 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
     uzytkownicy.push_back(uzytkownik);
     plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
+    //system("pause");
 }
 
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
@@ -161,20 +162,20 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 
 bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 {
-  if (idZalogowanegoUzytkownika > 0)
-    return true;
-  else
-    return false;
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
 }
 
 void UzytkownikMenedzer::wylogowanieUzytkownika()
 {
-  idZalogowanegoUzytkownika = 0;
+    idZalogowanegoUzytkownika = 0;
 }
 
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
-  return idZalogowanegoUzytkownika;
+    return idZalogowanegoUzytkownika;
 }
 
 
