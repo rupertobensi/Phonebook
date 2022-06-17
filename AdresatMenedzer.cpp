@@ -9,9 +9,9 @@ void AdresatMenedzer::dodajAdresata()
 
     adresaci.push_back(adresat);
     if (plikZAdresatami.dopiszAdresataDoPliku(adresat))
-      cout << "Nowy adresat zostal dodany" << endl;
+        cout << "Nowy adresat zostal dodany" << endl;
     else
-      cout <<"Blad. Nie udalo sie dodac nowego adresata do pliku." << endl;
+        cout <<"Blad. Nie udalo sie dodac nowego adresata do pliku." << endl;
     system("pause");
 
 }
@@ -54,7 +54,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 
         for (int i = 0; i < adresaci.size(); i++)
         {
-          wyswietlDaneAdresata(adresaci[i]);
+            wyswietlDaneAdresata(adresaci[i]);
         }
 
         cout << endl;
@@ -275,7 +275,7 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
                 iloscAdresatow++;
             }
         }
-         wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
+        wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
     }
     else
     {
